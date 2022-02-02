@@ -1,5 +1,13 @@
 @extends('layouts.main-layout')
 @section('content')
+
+    @auth
+        <h1>{{ Auth::user() -> name }}</h1>
+        <a class="btn btn-secondary" href="{{ route('logout') }}">LOGOUT</a>
+        <br><br>
+        @else
+        <h1>If you wanne see my site you have to login/register</h1>
+    @endauth
     <h1 class="text-info bg-dark">
         Sign In
     </h1>
